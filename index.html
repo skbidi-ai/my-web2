@@ -1,125 +1,177 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Devrock</title>
-    <link href="css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- Add the following line to set the favicon -->
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
-    <meta name="description" content="devrock website.">
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Bhakat | ZenithSenpai</title>
+  <link href="css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="images/devrock.png">
+  <meta name="description" content="Dev Bhakat's Portfolio">
+</head>
+
 <body>
-  <!--body-->
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- Animated Background -->
+  <div class="aurora-bg">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+  </div>
+
+  <!-- Fluent Header -->
   <header class="header">
-    <a href="#" class="logo">Portfolio</a>
+    <a href="#" class="logo">Dev<span>Bhakat</span></a>
     <i class="bx bx-menu" id="menu-icon"></i>
     <nav class="navbar">
       <a href="#home" class="active">Home</a>
-      <a href="#about">ABOUT</a>
-      <a href="#services">SERVICES</a>
-      <a href="#portfolio">SOCIAL</a>
-      <!-- Removed the contact link -->
+      <a href="#about">About</a>
+      <a href="#portfolio">Socials</a>
     </nav>
   </header>
-  <section class="home" id="home">
-    <div class="home-content">
-      <h3>Hello, It's Me</h3>
-      <h1>DevBhakat</h1>
-      <h3>And I'm a <span class="m-text"></span></h3>
-      <div class="social-media">
-        <a href="https://github.com/devrock07"><i class="bx bxl-github"></i></a>
-        <a href="mailto:dm@devrock.xyz"><i class="bx bxs-envelope"></i></a>
-        <a href="https://www.youtube.com/channel/UCupk9jNnJxt6Ees2IOzz91A"><i class="bx bxl-youtube"></i></a>
-      </div>
-      <a href="images/devrock.png" class="btn">Download pfp</a>
-    </div>
-    <div class="home-img">
-      <img src="images/devrock.png" alt="">
-    </div>
-  </section>
-  <section class="about" id="about">
-    <div class="about-img">
-      <img src="images/2023-07-07-15-15-42-2072.jpg" alt="">
-    </div>
-    <div class="about-content">
-      <h2 class="heading">About<span>Me</span></h2>
-      <h3>Web Developer</h3>
-      <p>Web developer with experience building single-page web applications and a knack for creating attractive user
-        interfaces. Skilled experience in JavaScript, HTML, CSS, PHP, and Bootstrap.</p>
-      <a href="mailto:dm@devrock.xyz" class="btn">Contact Me</a>
-    </div>
-  </section>
-  <section class="services" id="services">
-    <h2 class="heading">Our<span>Services</span></h2>
-    <div class="services-container">
-      <div class="services-box">
-        <i class="bx bx-code-alt"></i>
-        <h3>Web Development</h3>
-        <p>Motivated designer and developer with experience creating custom websites through PHP and CSS. Strong
-          collaboration skills and proven history of application development. DHTML and JavaScript. MS Access and MySQL.
-        </p>
-        <a href="#" class="btn">:)</a>
+
+  <!-- Hero Section (Bento) -->
+  <section id="home">
+    <div class="hero-bento">
+      <div class="bento-card hero-main" data-tilt>
+        <h3>Hello, I am</h3>
+        <h1>Dev Bhakat</h1>
+        <div class="text-animation">A <span class="typed-text"></span><span class="cursor"
+            style="border-right: 3px solid var(--accent-secondary); animation: blink 1s infinite;">&nbsp;</span></div>
+        <p>An 18-year-old developer from India 🇮🇳 who loves building highly interactive, dense, and "fucking awesome"
+          experiences on the web.</p>
+        <div style="margin-top: 3rem;">
+          <a href="mailto:dm@devrock.xyz">
+            <span class="skill-tag"
+              style="display: inline-flex; background: rgba(139, 92, 246, 0.2); border-color: var(--accent-primary);"><i
+                class='bx bx-envelope'></i> Let's Talk</span>
+          </a>
+        </div>
       </div>
 
-      <div class="services-box">
-        <i class="bx bx-crop"></i>
-        <h3>UI/UX Design</h3>
-        <p>You cannot make a good design if you do not understand people; design is made for people.</p>
-        <a href="#" class="btn">:3</a>
-      </div>
-
-      <div class="services-box">
-        <i class="bx bxl-instagram-alt"></i>
-        <h3>App Design</h3>
-        <p>I'm a UI/UX Designer with a great passion for my work. The main goal is to create modern, attractive, and
-          user-friendly interfaces and find creative and simple solutions for your business.</p>
-        <a href="#" class="btn">♡</a>
+      <div class="bento-card hero-img-card" data-tilt>
+        <img src="images/devrock.png" alt="Profile">
       </div>
     </div>
   </section>
-  <section class="portfolio" id="portfolio">
-    <h2 class="heading">SOCIAL<span>MEDIA</span></h2>
-    <div class="portfolio-container">
-      <div class="portfolio-box">
-        <img src="images/discord-logo-discord-icon-transparent-free-png.webp" alt="">
-        <div class="portfolio-layer">
+
+  <!-- Sliding Marquee -->
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span>Vanilla JS</span>
+      <span class="filled">Node.js</span>
+      <span>Python</span>
+      <span class="filled">HTML & CSS</span>
+      <span>Debian</span>
+      <span class="filled">Windows</span>
+      <span>Web Dev</span>
+      <span class="filled">Bot Dev</span>
+      <!-- Duplicate for infinite effect -->
+      <span>Vanilla JS</span>
+      <span class="filled">Node.js</span>
+      <span>Python</span>
+      <span class="filled">HTML & CSS</span>
+      <span>Debian</span>
+      <span class="filled">Windows</span>
+      <span>Web Dev</span>
+      <span class="filled">Bot Dev</span>
+    </div>
+  </div>
+
+  <!-- About Section (Bento) -->
+  <section id="about">
+    <h2 class="heading">About <span>Me</span></h2>
+
+    <div class="about-bento">
+      <div class="bento-card about-intro" data-tilt>
+        <h2>The Architect.</h2>
+        <p>I focus on creating dense, information-rich user interfaces blending modern web aesthetics with raw
+          performance. Known online as <b>devrock</b> or <b>ZenithSenpai</b>.</p>
+        <p>Languages: English, Hindi, Bengali.</p>
+      </div>
+
+      <div class="bento-card stats-card" data-tilt>
+        <i class='bx bx-code-alt'></i>
+        <h4>18 Years Old</h4>
+        <p style="color: var(--text-muted); font-size: 1.4rem;">High School Student</p>
+      </div>
+
+      <div class="bento-card skills-card" data-tilt>
+        <h3 style="font-size: 2.4rem; margin-bottom: 1rem;">Tech Stack & OS Environment</h3>
+        <p style="font-size: 1.6rem; color: var(--text-muted);">The tools I use daily to craft digital solutions.</p>
+        <div class="skills-container">
+          <span class="skill-tag"><i class='bx bxl-javascript'></i> JavaScript</span>
+          <span class="skill-tag"><i class='bx bxl-nodejs'></i> Node.js</span>
+          <span class="skill-tag"><i class='bx bxl-python'></i> Python</span>
+          <span class="skill-tag"><i class='bx bxl-html5'></i> HTML5 / CSS3</span>
+          <span class="skill-tag"><i class='bx bxl-windows'></i> Windows</span>
+          <span class="skill-tag"><i class="fa-brands fa-linux"></i> Linux OS</span>
+          <span class="skill-tag"><i class="fa-brands fa-debian"></i> Debian</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Section (Bento Grid) -->
+  <section id="portfolio">
+    <h2 class="heading">Connect <span>Locally</span></h2>
+
+    <div class="social-grid">
+      <div class="bento-card social-card" data-tilt>
+        <i class="bx bxl-github main-icon"></i>
+        <div>
+          <h4>GitHub</h4>
+          <p>devrock07</p>
+        </div>
+        <a href="https://github.com/devrock07" target="_blank" class="btn-icon"><i
+            class="bx bx-right-arrow-alt"></i></a>
+      </div>
+
+      <div class="bento-card social-card" data-tilt>
+        <i class="bx bxl-discord-alt main-icon"></i>
+        <div>
           <h4>Discord</h4>
-          <p>just my coding server.</p>
-          <a href="https://discord.gg/DBnTz4epb5"><i class="bx bx-link-external"></i></a>
+          <p>devrock07</p>
         </div>
+        <a href="https://discordapp.com/users/devrock07" target="_blank" class="btn-icon"><i
+            class="bx bx-right-arrow-alt"></i></a>
       </div>
-      <div class="portfolio-box">
-        <img src="images/insta.png" alt="">
-        <div class="portfolio-layer">
-          <h4>Insta</h4>
-          <p>my instagram id.</p>
-          <a href="https://www.instagram.com/devrock.ltc/"><i class="bx bx-link-external"></i></a>
+
+      <div class="bento-card social-card" data-tilt>
+        <i class="bx bxl-instagram main-icon"></i>
+        <div>
+          <h4>Instagram</h4>
+          <p>dev.bkt</p>
         </div>
+        <a href="https://www.instagram.com/dev.bkt/" target="_blank" class="btn-icon"><i
+            class="bx bx-right-arrow-alt"></i></a>
       </div>
-      <div class="portfolio-box">
-        <img src="images/yt.jpg" alt="">
-        <div class="portfolio-layer">
-          <h4>Yt</h4>
-          <p>my Youtube Channel.</p>
-          <a href="https://www.youtube.com/@ZenithSenpai"><i class="bx bx-link-external"></i></a>
+
+      <div class="bento-card social-card" data-tilt>
+        <i class="bx bxl-youtube main-icon"></i>
+        <div>
+          <h4>YouTube</h4>
+          <p>ZenithSenpai</p>
         </div>
+        <a href="https://www.youtube.com/@ZenithSenpai" target="_blank" class="btn-icon"><i
+            class="bx bx-right-arrow-alt"></i></a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="footer-text">
-      <p>Copyright © 2024 by DevBhakat | All Rights Reserved.</p>
-    </div>
-    <div class="footer-iconTop">
-      <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
-    </div>
+    <p>Crafted with Vanilla JS & CSS Grid | Copyright © 2024 Dev Bhakat</p>
   </footer>
 
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="js/script.js"></script>
 
+</body>
 
-</body></html>
+</html>
